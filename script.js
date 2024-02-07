@@ -144,7 +144,7 @@ for (let i = 0; i <= 23; i++) {
         .catch(error => console.log('error', error));
 };
 
-// fetch weapons
+// // fetch weapons
 for (let i = 0; i <= 18; i++){
     fetch("https://valorant-api.com/v1/weapons")
         .then(response => response.json())
@@ -359,6 +359,53 @@ for (let i = 0; i <= 18; i++){
                 url = "https://valorant.fandom.com/wiki/Stinger#Skins";
                 window.open(url, '_blank');
             });
+        })
+        .catch(error => console.log('error', error));
+};
+
+// fetch bundles
+for (let i = 0; i <= 123; i++){
+    fetch("https://valorant-api.com/v1/bundles")
+        .then(response => response.json())
+        .then(result => {
+            document.querySelector("#dataArea").innerHTML += `
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card border border-light-subtle" style="background-color: #171717;">
+                    <div class="card-body text-white d-grid">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class="img-fluid" src="${result.data[i].displayIcon}">
+                            </div>
+                            <h3 class="fw-semibold text-center mb-0 mt-2">${result.data[i].displayName}</h3>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        })
+        .catch(error => console.log('error', error));
+};
+
+// fetch maps
+for (let i = 0; i <= 123; i++){
+    fetch("https://valorant-api.com/v1/maps")
+        .then(response => response.json())
+        .then(result => {
+            document.querySelector("#dataArea").innerHTML += `
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card border border-light-subtle" style="background-color: #171717;">
+                    <div class="card-body text-white d-grid">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class="img-fluid" src="${result.data[i].splash}">
+                            </div>
+                            <h3 class="fw-semibold text-center mb-0 mt-2">${result.data[i].displayName}</h3>
+                            <span class="text-center mt-1">${result.data[i].narrativeDescription}</span>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
         })
         .catch(error => console.log('error', error));
 };
