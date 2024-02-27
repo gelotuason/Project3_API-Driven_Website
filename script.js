@@ -43,7 +43,16 @@ document.querySelector("#mapsButton").addEventListener("click", (e) => {
     fetchMaps();
 });
 
-document.querySelector("#searchButton").addEventListener("click", () => {
+
+// Functions
+
+function enterKeyPress(event){
+    if (event.key == "Enter"){
+        searchButtonClicked();
+    }
+}
+
+function searchButtonClicked(){
     let userInput = document.querySelector("#search").value;
     if (userInput == ""){
         alert('Field is empty!');
@@ -53,7 +62,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
             fetch("https://valorant-api.com/v1/agents")
                 .then(response => response.json())
                 .then(result => {
-                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput)) {
+                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)) {
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -143,7 +152,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
             fetch("https://valorant-api.com/v1/weapons")
                 .then(response => response.json())
                 .then(result => {
-                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput)){
+                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)){
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -196,7 +205,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
             fetch("https://valorant-api.com/v1/bundles")
                 .then(response => response.json())
                 .then(result => {
-                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput)) {
+                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)) {
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -221,7 +230,7 @@ document.querySelector("#searchButton").addEventListener("click", () => {
             fetch("https://valorant-api.com/v1/maps")
                 .then(response => response.json())
                 .then(result => {
-                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput)) {
+                    if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)) {
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -243,57 +252,8 @@ document.querySelector("#searchButton").addEventListener("click", () => {
         }
     }
     
-
     document.querySelector("#search").value = "";
-});
-
-
-
-// Functions
-// function storeData() {
-//     for (let i = 0; i <= 23; i++){
-//         fetch("https://valorant-api.com/v1/agents")
-//             .then(response => response.json())
-//             .then(result => {
-//                 // dataAgent = JSON.stringify(result.data[i].displayName);
-//                 let dataAgent = Object.values(result.data[i].displayName);
-//                 let combinedDataAgent = dataAgent.concat().join('').toLowerCase();
-//                 data.push(combinedDataAgent);
-//             })
-//             .catch(error => console.log('error', error));
-
-            
-//     }
-
-    
-
-//     for (let i = 0; i <= 18; i++) {
-//         fetch("https://valorant-api.com/v1/weapons")
-//             .then(response => response.json())
-//             .then(result => {
-//                 data.push(result.data[i].displayName);
-//             })
-//             .catch(error => console.log('error', error));
-//     };
-
-//     for (let i = 0; i <= 123; i++) {
-//         fetch("https://valorant-api.com/v1/bundles")
-//             .then(response => response.json())
-//             .then(result => {
-//                 data.push(result.data[i].displayName);
-//             })
-//             .catch(error => console.log('error', error));
-//     };
-
-//     for (let i = 0; i <= 14; i++) {
-//         fetch("https://valorant-api.com/v1/maps")
-//             .then(response => response.json())
-//             .then(result => {
-//                 data.push(result.data[i].displayName);
-//             })
-//             .catch(error => console.log('error', error));
-//     };
-// }
+}
 
 function fetchAgents(){
     for (let i = 0; i <= 23; i++) {
