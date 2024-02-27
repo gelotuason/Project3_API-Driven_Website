@@ -3,3 +3,17 @@ body {
     background-color:  #171717;
     color: white;
 }
+
+.navbar-nav a:hover {
+    color: #FFFFFF;
+}
+
+.buttonClicked {
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.buttonHover:hover {
+    border: 2px solid #FFFFFF;
+}
+

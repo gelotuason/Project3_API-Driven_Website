@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link ps-4 pe-4 me-2 rounded text-dark" href="#" style="background-color: #D24545;">Login</a>
+                        <a class="nav-link ps-4 pe-4 me-2 rounded linkHover" href="#" style="background-color: #D24545;">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ps-4 pe-4 me-2 rounded text-dark" href="#" style="background-color: #D24545;">Signup</a>
+                        <a class="nav-link ps-4 pe-4 me-2 rounded linkHover" href="#" style="background-color: #D24545;">Signup</a>
                     </li>
                 </ul>
             </div>
@@ -50,20 +50,20 @@
         <label for="search" class="form-label fw-semibold">Search:</label>
         <div class="input-group">
             <input type="text" class="form-control" id="search" placeholder="Ex. Jett, Vandal, Glitchpop, Ascent" aria-describedby="button-addon2">
-            <button class="btn" type="button" id="button-addon2" style="background-color: #D24545;">Search</button>
+            <button class="btn" type="button" id="searchButton" style="background-color: #D24545;">Search</button>
         </div>
         <div class="mt-2">
-            <button class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold" type="button" style="background-color: #D24545;">Agents</button>
-            <button class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold" type="button" style="background-color: #D24545;">Weapons</button>
-            <button class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold" type="button" style="background-color: #D24545;">Bundles</button>
-            <button class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold" type="button" style="background-color: #D24545;">Maps</button>
+            <button id="agentsButton" class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold buttonHover" type="button" style="background-color: #D24545;">Agents</button>
+            <button id="weaponsButton" class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold buttonHover" type="button" style="background-color: #D24545;">Weapons</button>
+            <button id="bundlesButton" class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold buttonHover" type="button" style="background-color: #D24545;">Bundles</button>
+            <button id="mapsButton" class="btn ps-4 pe-4 pt-2 pb-2 mt-1 fw-semibold buttonHover" type="button" style="background-color: #D24545;">Maps</button>
         </div>
     </section>
     <!-- End of Search Section -->
 
     <!-- Main Section -->
     <main class="container-fluid p-5">
-        <h1 class="fw-bold">Agents:</h1>
+        <h1 id="dataTitle" class="fw-bold"></h1>
         <div id="dataArea" class="row">
             
         </div>
