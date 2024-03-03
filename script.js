@@ -63,6 +63,7 @@ function searchButtonClicked(){
                 .then(response => response.json())
                 .then(result => {
                     if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)) {
+                        document.querySelector("#dataTitle").innerHTML = "Agents:";
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -153,6 +154,7 @@ function searchButtonClicked(){
                 .then(response => response.json())
                 .then(result => {
                     if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)){
+                        document.querySelector("#dataTitle").innerHTML = "Weapons:";
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -206,6 +208,7 @@ function searchButtonClicked(){
                 .then(response => response.json())
                 .then(result => {
                     if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)) {
+                        document.querySelector("#dataTitle").innerHTML = "Bundles:";
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
@@ -231,6 +234,7 @@ function searchButtonClicked(){
                 .then(response => response.json())
                 .then(result => {
                     if (result.data[i].displayName.includes(userInput) || result.data[i].displayName.toLowerCase().includes(userInput) || result.data[i].displayName.toUpperCase().includes(userInput)) {
+                        document.querySelector("#dataTitle").innerHTML = "Maps:";
                         document.querySelector("#dataArea").innerHTML = `
                         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                             <div class="card border border-light-subtle" style="background-color: #171717;">
